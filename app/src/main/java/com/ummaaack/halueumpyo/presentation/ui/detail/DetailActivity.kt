@@ -1,11 +1,11 @@
-package com.ummaaack.halueumpyo.presentation.ui
+package com.ummaaack.halueumpyo.presentation.ui.detail
 
 import android.os.Bundle
 import com.ummaaack.halueumpyo.R
-import com.ummaaack.halueumpyo.databinding.ActivityMainBinding
+import com.ummaaack.halueumpyo.databinding.ActivityDetailBinding
 import com.ummaaack.halueumpyo.presentation.base.BaseViewUtil
 
-class MainActivity : BaseViewUtil.BaseAppCompatActivity<ActivityMainBinding>(R.layout.activity_main) {
+class DetailActivity : BaseViewUtil.BaseAppCompatActivity<ActivityDetailBinding>(R.layout.activity_detail) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initView()

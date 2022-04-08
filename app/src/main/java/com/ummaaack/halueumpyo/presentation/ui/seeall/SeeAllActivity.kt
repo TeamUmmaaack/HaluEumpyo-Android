@@ -1,11 +1,11 @@
-package com.ummaaack.halueumpyo.presentation.ui
+package com.ummaaack.halueumpyo.presentation.ui.seeall
 
 import android.os.Bundle
 import com.ummaaack.halueumpyo.R
-import com.ummaaack.halueumpyo.databinding.ActivityMainBinding
+import com.ummaaack.halueumpyo.databinding.ActivitySeeAllBinding
 import com.ummaaack.halueumpyo.presentation.base.BaseViewUtil
 
-class MainActivity : BaseViewUtil.BaseAppCompatActivity<ActivityMainBinding>(R.layout.activity_main) {
+class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>(R.layout.activity_see_all) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initView()

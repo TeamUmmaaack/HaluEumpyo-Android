@@ -13,6 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HaluEumpyo">
         <activity
+            android:name=".presentation.ui.detail.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.recommendation.RecommendationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.seeall.SeeAllActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.setting.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.write.WriteActivity"
+            android:exported="false" />
+        <activity
             android:name=".HaluEumpyoApp"
             android:exported="false" />
         <activity
