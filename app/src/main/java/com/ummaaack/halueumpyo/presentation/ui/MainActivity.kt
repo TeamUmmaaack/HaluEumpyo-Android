@@ -1,7 +1,8 @@
-package com.ummaaack.halueumpyo
+package com.ummaaack.halueumpyo.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ummaaack.halueumpyo.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
