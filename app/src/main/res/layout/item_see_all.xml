@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_marginVertical="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_white_1_10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_see_all_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="09"
+                android:textColor="@color/gray06"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_see_all_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="WED"
+                android:textColor="@color/gray06"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/tv_item_see_all_month"
+                app:layout_constraintStart_toStartOf="@id/tv_item_see_all_month"
+                app:layout_constraintTop_toBottomOf="@id/tv_item_see_all_month" />
+
+            <ImageView
+                android:id="@+id/iv_item_see_all_div"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:src="@drawable/img_item_div"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_item_see_all_day"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_item_see_all_day"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_item_see_all_div"
+                app:layout_constraintTop_toTopOf="@id/tv_item_see_all_month">
+
+                <TextView
+                    android:id="@+id/tv_item_see_all_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:ems="1"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:lineSpacingExtra="2dp"
+                    android:maxLines="2"
+                    android:text="포켓몬빵 드디어 샀다 ㅋㅋ 아오 진짜진짜지너리어ㅏ러ㅏㅣ너어라ㅓ아러어라어라ㅓ이ㅏ러ㅏ러이 어쩌구자나 어이구 저이구"
+                    android:textColor="@color/gray04"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_item_see_all_music_singer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text="Charile Pooth"
+                    android:textColor="@color/gray05"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/tv_item_see_all_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_item_see_all_content" />
+
+                <TextView
+                    android:id="@+id/tv_see_all_music_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text=" - See You Again"
+                    android:textColor="@color/gray05"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_item_see_all_music_singer"
+                    app:layout_constraintStart_toEndOf="@id/tv_item_see_all_music_singer"
+                    app:layout_constraintTop_toTopOf="@id/tv_item_see_all_music_singer" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_item_see_all_eight_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_eight_note_soso"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
