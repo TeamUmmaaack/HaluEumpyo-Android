@@ -10,10 +10,108 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/img_soso"
         tools:context=".presentation.ui.recommendation.RecommendationActivity">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:id="@+id/tv_recommendation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="오늘의 감정을 바탕으로 추천했어요"
+                android:textColor="@color/gray01"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view_div_top"
+                android:layout_width="240dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/gray01"
+                app:layout_constraintEnd_toEndOf="@+id/tv_recommendation_title"
+                app:layout_constraintStart_toStartOf="@+id/tv_recommendation_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recommendation_title" />
+
+            <ImageView
+                android:id="@+id/iv_recommendation_music_cover"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:elevation="20dp"
+                android:padding="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_angry"
+                app:layout_constraintDimensionRatio="208:208"
+                app:layout_constraintEnd_toEndOf="@+id/view_div_top"
+                app:layout_constraintStart_toStartOf="@+id/view_div_top"
+                app:layout_constraintTop_toBottomOf="@+id/view_div_top"
+                app:layout_goneMarginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tv_recommendation_music_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="See You Again"
+                android:textColor="@color/gray01"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="@+id/iv_recommendation_music_cover"
+                app:layout_constraintStart_toStartOf="@+id/iv_recommendation_music_cover"
+                app:layout_constraintTop_toBottomOf="@+id/iv_recommendation_music_cover" />
+
+            <TextView
+                android:id="@+id/tv_recommendation_music_singer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="Charlie Puth"
+                android:textColor="@color/gray01"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_recommendation_music_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_recommendation_music_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recommendation_music_name" />
+
+            <View
+                android:id="@+id/view_div_bottom"
+                android:layout_width="240dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/gray01"
+                app:layout_constraintEnd_toEndOf="@+id/tv_recommendation_music_singer"
+                app:layout_constraintStart_toStartOf="@+id/tv_recommendation_music_singer"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recommendation_music_singer" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_recommendation_go_to_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:background="@drawable/img_go_to_play_bg"
+                android:drawableRight="@drawable/ic_go_to_play"
+                android:fontFamily="@font/pretendard_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingHorizontal="25dp"
+                android:paddingBottom="8dp"
+                android:text="들으러 가기"
+                android:textColor="@color/gray01"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/view_div_bottom"
+                app:layout_constraintStart_toStartOf="@+id/view_div_bottom"
+                app:layout_constraintTop_toBottomOf="@+id/view_div_bottom" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
 
