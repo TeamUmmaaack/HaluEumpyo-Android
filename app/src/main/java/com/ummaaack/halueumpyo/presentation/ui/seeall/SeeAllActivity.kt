@@ -3,6 +3,7 @@ package com.ummaaack.halueumpyo.presentation.ui.seeall
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
@@ -12,6 +13,8 @@ import com.ummaaack.halueumpyo.R
 import com.ummaaack.halueumpyo.databinding.ActivitySeeAllBinding
 import com.ummaaack.halueumpyo.presentation.base.BaseViewUtil
 import com.ummaaack.halueumpyo.presentation.ui.MainActivity
+import com.ummaaack.halueumpyo.presentation.ui.detail.DetailActivity
+import com.ummaaack.halueumpyo.presentation.util.StatusBarUtil
 import org.cardna.presentation.ui.alarm.adapter.DiaryAdapter
 import org.cardna.presentation.ui.alarm.adapter.DiaryResponseData
 import java.util.*
@@ -26,6 +29,7 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
     }
 
     override fun initView() {
+        StatusBarUtil.setStatusBar(this, resources.getColor(R.color.white, null))
         setFriendRequestAdapter()
         setDatePickerClickListener()
     }
@@ -48,7 +52,7 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
         )
 
         diaryAdapter = DiaryAdapter { item ->
-          startActivity(Intent(this, MainActivity::class.java))
+          startActivity(Intent(this, DetailActivity::class.java))
         }
         with(binding.rvSeeAll) {
             adapter = diaryAdapter

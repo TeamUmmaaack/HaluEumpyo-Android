@@ -45,7 +45,7 @@
                 android:layout_width="118dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_medium"
-                android:paddingStart="28dp"
+                android:paddingStart="22dp"
                 android:text="2021년 12월"
                 android:textColor="@color/gray04"
                 android:textSize="16sp"
@@ -67,7 +67,7 @@
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="6dp"
                 android:overScrollMode="never"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_see_all_date_picker">
@@ -80,7 +80,7 @@
                         android:id="@+id/rv_see_all"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingHorizontal="28dp"
+                        android:paddingHorizontal="22dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         tools:itemCount="6"
                         tools:listitem="@layout/item_see_all" />

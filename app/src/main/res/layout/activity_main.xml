@@ -12,6 +12,40 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.MainActivity">
 
+        <ImageView
+            android:id="@+id/iv_main_see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_see_all"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_main_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_setting"
+            app:layout_constraintBottom_toBottomOf="@id/iv_main_see_all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_main_see_all" />
+
+        <ImageView
+            android:id="@+id/iv_main_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/bg_white_circle"
+            android:elevation="10dp"
+            android:padding="21dp"
+            android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
