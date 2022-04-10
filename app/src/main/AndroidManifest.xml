@@ -23,24 +23,27 @@
         <activity
             android:name=".presentation.ui.seeall.SeeAllActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".presentation.ui.setting.SettingActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.write.WriteActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".HaluEumpyoApp"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.MainActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

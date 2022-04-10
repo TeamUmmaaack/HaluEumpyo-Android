@@ -21,6 +21,9 @@ class DiaryAdapter(
                 tvItemSeeAllMusicSinger.text = data.musicSinger
                 tvSeeAllMusicName.text = " - "+data.musicName
 
+                ctlSeeAll.setOnClickListener {
+                    clickListener(data)
+                }
             }
         }
     }
