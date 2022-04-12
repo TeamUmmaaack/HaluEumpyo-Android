@@ -1,5 +1,6 @@
 package com.ummaaack.halueumpyo.presentation.ui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
@@ -20,6 +21,7 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
     private val inputMonth = inputMonth - 1
 
 
+    @SuppressLint("ResourceType")
     override fun getView(position: Int, view: View?, parent: ViewGroup): View {
 
         var view = view
@@ -44,10 +46,12 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
         //뷰의 생김새와 일자 디자인 변경
         (view as AppCompatButton).setTypeface(null, Typeface.NORMAL)
         view.setTextColor(Color.parseColor("#656565"))
-
         if (month == calendarToday.get(Calendar.MONTH) && year == calendarToday.get(Calendar.YEAR) &&
             day == calendarToday.get(Calendar.DATE)
         ) {
+
+            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_angry_resize, 0);
+          //  view.setBackg(R.drawable.eight_note_angry_resize)
             //오늘 날짜에 하고싶은거
         }
 
@@ -56,8 +60,6 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
 
         return view
     }
-
-
 
 
 }
