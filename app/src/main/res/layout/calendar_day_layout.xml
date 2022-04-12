@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.AppCompatButton xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="38dp"
-    android:layout_height="38dp"
-    android:layout_margin="15dp"
-    android:gravity="center"
-    android:padding="5dp"
-    android:textColor="#656565"
+    android:layout_width="42dp"
+    android:layout_height="42dp"
+    android:background="@drawable/ic_eight_note_soso"
     android:fontFamily="@font/pretendard_regular"
+    android:gravity="center"
+    android:paddingVertical="9dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="5dp"
     android:text="1"
+    android:textColor="#656565"
     android:textSize="20sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
 
