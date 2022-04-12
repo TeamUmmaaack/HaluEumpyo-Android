@@ -42,7 +42,7 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
         }
 
         //뷰의 생김새와 일자 디자인 변경
-        (view as TextView).setTypeface(null, Typeface.NORMAL)
+        (view as AppCompatButton).setTypeface(null, Typeface.NORMAL)
         view.setTextColor(Color.parseColor("#656565"))
 
         if (month == calendarToday.get(Calendar.MONTH) && year == calendarToday.get(Calendar.YEAR) &&
