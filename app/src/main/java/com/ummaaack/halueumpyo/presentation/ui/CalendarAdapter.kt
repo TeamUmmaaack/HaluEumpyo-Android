@@ -32,6 +32,7 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
         val day = calendar.get(Calendar.DATE)
         val month = calendar.get(Calendar.MONTH)
         val year = calendar.get(Calendar.YEAR)
+        val dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
 
         //오늘에 해당하는 캘린더를 가져옴
         val today = Date()
@@ -56,6 +57,14 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
             view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_surprise_resize, 0);
         }else{
             view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_transparent_resize, 0);
+        }
+
+        //요일 색깔 바꾸기
+        if(dayOfWeek==1){
+            view.setTextColor(Color.parseColor("#A92626"))
+        }
+        if(dayOfWeek==7){
+            view.setTextColor(Color.parseColor("#262CA9"))
         }
 
         //날짜를 텍스트뷰에 설정
