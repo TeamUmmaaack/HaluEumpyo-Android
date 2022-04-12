@@ -46,13 +46,16 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
         //뷰의 생김새와 일자 디자인 변경
         (view as AppCompatButton).setTypeface(null, Typeface.NORMAL)
         view.setTextColor(Color.parseColor("#656565"))
+
         if (month == calendarToday.get(Calendar.MONTH) && year == calendarToday.get(Calendar.YEAR) &&
             day == calendarToday.get(Calendar.DATE)
         ) {
-
-            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_angry_resize, 0);
-          //  view.setBackg(R.drawable.eight_note_angry_resize)
             //오늘 날짜에 하고싶은거
+            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_angry_resize, 0);
+        }else if(day==14){
+            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_surprise_resize, 0);
+        }else{
+            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_transparent_resize, 0);
         }
 
         //날짜를 텍스트뷰에 설정
