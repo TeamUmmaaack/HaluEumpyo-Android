@@ -2,17 +2,22 @@ package com.ummaaack.halueumpyo.presentation.ui
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.ummaaack.halueumpyo.R
 import android.widget.GridView
 import android.widget.LinearLayout
+import androidx.lifecycle.MutableLiveData
+import org.cardna.presentation.ui.alarm.adapter.DiaryResponseData
 import java.util.*
 import kotlin.collections.HashSet
 
 class CalendarView : LinearLayout {
     lateinit var header: LinearLayout
     lateinit var gridView: GridView
+    private lateinit var calendarAdapter: CalendarAdapter
+
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0) {
@@ -44,9 +49,10 @@ class CalendarView : LinearLayout {
             cells.add(inputCalendar.time)
             inputCalendar.add(Calendar.DAY_OF_MONTH, 1)
         }
-        gridView.adapter = CalendarAdapter(context, cells, events, inputCalendar.get(Calendar.MONTH))
 
-
+        //gridView에 CalendarAdapter를 연결
+        calendarAdapter = CalendarAdapter(context, cells, events, inputCalendar.get(Calendar.MONTH))
+        gridView.adapter = calendarAdapter
     }
 
     private fun initControl(context: Context, attrs: AttributeSet) {

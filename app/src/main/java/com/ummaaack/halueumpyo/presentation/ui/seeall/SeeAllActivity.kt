@@ -37,22 +37,24 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
 
     private fun setFriendRequestAdapter() {
         val dataList = mutableListOf(
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
-            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ","한숨","이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
+            DiaryResponseData("4", "WED", "오늘 먹은 음식은 가나다라마사다다리ㅏ너아ㅓㅏㄹ어ㅏ러ㅏ러아러ㅏ어라ㅓ라아러ㅏ어라ㅓㅇ", "한숨", "이하이"),
         )
 
-        diaryAdapter = DiaryAdapter { item ->
-          startActivity(Intent(this, DetailActivity::class.java))
+        diaryAdapter = DiaryAdapter {
+            startActivity(Intent(this, DetailActivity::class.java).apply {
+                putExtra("diary", it)
+            })
         }
         with(binding.rvSeeAll) {
             adapter = diaryAdapter

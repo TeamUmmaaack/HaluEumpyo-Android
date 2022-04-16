@@ -2,6 +2,7 @@ package com.ummaaack.halueumpyo.presentation.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.view.LayoutInflater
@@ -12,6 +13,9 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import java.util.*
 import com.ummaaack.halueumpyo.R
+import com.ummaaack.halueumpyo.presentation.ui.detail.DetailActivity
+import org.cardna.presentation.ui.alarm.adapter.DiaryResponseData
+import java.io.Serializable
 import kotlin.collections.ArrayList
 
 class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSet<Date>, inputMonth: Int) :
@@ -20,6 +24,7 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private val inputMonth = inputMonth - 1
 
+    private var postSendDiary: ((DiaryResponseData) -> Unit)? = null
 
     @SuppressLint("ResourceType")
     override fun getView(position: Int, view: View?, parent: ViewGroup): View {
@@ -48,27 +53,38 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
         (view as AppCompatButton).setTypeface(null, Typeface.NORMAL)
         view.setTextColor(Color.parseColor("#656565"))
 
+
+        //TODO 일기쓴 날 아이콘 달기
         if (month == calendarToday.get(Calendar.MONTH) && year == calendarToday.get(Calendar.YEAR) &&
             day == calendarToday.get(Calendar.DATE)
         ) {
             //오늘 날짜에 하고싶은거
-            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_angry_resize, 0);
-        }else if(day==14){
-            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_surprise_resize, 0);
-        }else{
-            view.setCompoundDrawablesWithIntrinsicBounds( 0, 0, R.drawable.eight_note_transparent_resize, 0);
+            view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eight_note_angry_resize, 0);
+        } else if (day == 14) {
+            view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eight_note_surprise_resize, 0);
+            view.setOnClickListener { }
+        } else {
+            view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eight_note_transparent_resize, 0);
         }
 
+
         //요일 색깔 바꾸기
-        if(dayOfWeek==1){
+        if (dayOfWeek == 1) {
             view.setTextColor(Color.parseColor("#A92626"))
         }
-        if(dayOfWeek==7){
+        if (dayOfWeek == 7) {
             view.setTextColor(Color.parseColor("#262CA9"))
         }
 
         //날짜를 텍스트뷰에 설정
         view.text = calendar.get(Calendar.DATE).toString()
+
+        //각 날짜 클릭시 상세다이어리로 보내는 리스너
+        view.setOnClickListener {
+            context.startActivity(Intent(context, DetailActivity::class.java).apply {
+                putExtra("diary", DiaryResponseData("4", "16", "아자자", "룰루", "아이유"))
+            })
+        }
 
         return view
     }

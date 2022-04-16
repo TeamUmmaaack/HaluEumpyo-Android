@@ -40,7 +40,7 @@
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="24dp"
             android:background="@drawable/bg_white_circle"
-            android:elevation="10dp"
+            android:elevation="5dp"
             android:padding="21dp"
             android:src="@drawable/ic_plus"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -81,6 +81,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_main_month">
 
             <com.ummaaack.halueumpyo.presentation.ui.CalendarView
+                android:id="@+id/cdv_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"

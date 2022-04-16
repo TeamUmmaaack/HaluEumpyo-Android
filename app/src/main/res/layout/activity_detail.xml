@@ -57,7 +57,7 @@
 
 
         <TextView
-            android:id="@+id/et_detail_content"
+            android:id="@+id/tv_detail_content"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
@@ -67,26 +67,27 @@
             android:fontFamily="@font/pretendard_regular"
             android:includeFontPadding="false"
             android:lineSpacingExtra="6dp"
+            android:text="오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다"
             android:textColor="@color/gray06"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mt_detail"
-            android:text="오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다" />
+            app:layout_constraintTop_toBottomOf="@+id/mt_detail" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="104dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/et_detail_content"
-            app:layout_constraintStart_toStartOf="@id/et_detail_content">
+            app:layout_constraintEnd_toEndOf="@id/tv_detail_content"
+            app:layout_constraintStart_toStartOf="@id/tv_detail_content">
 
             <ImageView
+                android:background="@drawable/shadow"
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/bg_white_1_10dp"
+                android:src="@drawable/bg_white_1_10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -95,7 +96,7 @@
                 android:id="@+id/iv_detail_music_cover"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_angry"
                 app:layout_constraintBottom_toBottomOf="parent"

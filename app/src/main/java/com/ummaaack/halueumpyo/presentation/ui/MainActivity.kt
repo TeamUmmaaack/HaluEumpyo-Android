@@ -5,10 +5,12 @@ import android.os.Bundle
 import com.ummaaack.halueumpyo.R
 import com.ummaaack.halueumpyo.databinding.ActivityMainBinding
 import com.ummaaack.halueumpyo.presentation.base.BaseViewUtil
+import com.ummaaack.halueumpyo.presentation.ui.detail.DetailActivity
 import com.ummaaack.halueumpyo.presentation.ui.seeall.SeeAllActivity
 import com.ummaaack.halueumpyo.presentation.ui.setting.SettingActivity
 import com.ummaaack.halueumpyo.presentation.ui.write.WriteActivity
 import com.ummaaack.halueumpyo.presentation.util.StatusBarUtil
+import org.cardna.presentation.ui.alarm.adapter.DiaryAdapter
 
 class MainActivity : BaseViewUtil.BaseAppCompatActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,10 +20,10 @@ class MainActivity : BaseViewUtil.BaseAppCompatActivity<ActivityMainBinding>(R.l
 
     override fun initView() {
         StatusBarUtil.setStatusBar(this, resources.getColor(R.color.white, null))
-        setClickListener()
+        setInitClickListener()
     }
 
-    private fun setClickListener() {
+    private fun setInitClickListener() {
         with(binding) {
             ivMainSeeAll.setOnClickListener {
                 startActivity(Intent(this@MainActivity, SeeAllActivity::class.java))
@@ -33,5 +35,9 @@ class MainActivity : BaseViewUtil.BaseAppCompatActivity<ActivityMainBinding>(R.l
                 startActivity(Intent(this@MainActivity, WriteActivity::class.java))
             }
         }
+    }
+
+    private fun setDateClickListener() {
+
     }
 }
