@@ -60,7 +60,7 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
         ) {
             //오늘 날짜에 하고싶은거
             view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eight_note_angry_resize, 0);
-        } else if (day == 14) {
+        } else if (day == 14 || day==18) {
             view.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eight_note_surprise_resize, 0);
             view.setOnClickListener { }
         } else {
@@ -82,7 +82,7 @@ class CalendarAdapter(context: Context, days: ArrayList<Date>, eventDays: HashSe
         //각 날짜 클릭시 상세다이어리로 보내는 리스너
         view.setOnClickListener {
             context.startActivity(Intent(context, DetailActivity::class.java).apply {
-                putExtra("diary", DiaryResponseData("4", "16", "아자자", "룰루", "아이유"))
+                putExtra("diary", DiaryResponseData("4", "16", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "See You Again", "Charile Pooth"))
             })
         }
 

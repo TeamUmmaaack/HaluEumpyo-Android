@@ -44,13 +44,13 @@ class WriteActivity : BaseViewUtil.BaseAppCompatActivity<ActivityWriteBinding>(R
     private fun setSendClickListener() {
         binding.ctvWriteSend.setOnClickListener {
             val dialog = this.showCustomDialog(R.layout.dialog_recommendation)
-            Handler(Looper.getMainLooper()).postDelayed({ dialog.dismiss() }, 5000)
-            Handler(Looper.getMainLooper()).postDelayed({ gotoRecommendation() }, 5001)
+            Handler(Looper.getMainLooper()).postDelayed({ dialog.dismiss() }, 4000)
+            Handler(Looper.getMainLooper()).postDelayed({ gotoRecommendation() }, 4001)
         }
     }
 
     private fun gotoRecommendation() {
         startActivity(Intent(this, RecommendationActivity::class.java))
-        finish()
+     //   finish()
     }
 }

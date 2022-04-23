@@ -23,17 +23,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/iv_main_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_setting"
-            app:layout_constraintBottom_toBottomOf="@id/iv_main_see_all"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/iv_main_see_all" />
-
-        <ImageView
             android:id="@+id/iv_main_write"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,6 +35,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_main_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_setting"
+            app:layout_constraintBottom_toBottomOf="@id/iv_main_see_all"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_main_see_all" />
+
 
         <TextView
             android:id="@+id/tv_main_year"
@@ -73,6 +74,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_main_year" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctl_main"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="26dp"
@@ -91,7 +93,80 @@
             </com.ummaaack.halueumpyo.presentation.ui.CalendarView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ctl_service_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#66000000"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ctl_main_service"
+                android:layout_width="300dp"
+                android:layout_height="260dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="80dp"
+                android:background="@drawable/bg_white_1_10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_main_service_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:text="더 좋은 서비스를 위해"
+                    android:textColor="@color/gray06"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_main_service_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:text="추천받은 음악의 만족도를 평가해주세요!"
+                    android:textColor="@color/gray06"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_main_service_one"
+                    app:layout_constraintStart_toStartOf="@+id/tv_main_service_one"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_main_service_one" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:isIndicator="false"
+                    android:progressTint="@color/main_purple"
+                    android:numStars="5"
+                    android:rating="0.0"
+                    android:stepSize="1"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_main_service_two"
+                    app:layout_constraintStart_toStartOf="@+id/tv_main_service_two"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_main_service_two" />
+
+                <TextView
+                    android:id="@+id/tv_main_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:text="확인"
+                    android:textColor="@color/gray04"
+                    app:layout_constraintEnd_toEndOf="@+id/ratingBar"
+                    app:layout_constraintStart_toStartOf="@id/ratingBar"
+                    app:layout_constraintTop_toBottomOf="@id/ratingBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

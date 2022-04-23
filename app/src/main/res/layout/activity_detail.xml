@@ -84,7 +84,7 @@
 
             <ImageView
                 android:background="@drawable/shadow"
-                android:id="@+id/imageView"
+                android:id="@+id/iv_detail_music"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/bg_white_1_10dp"
@@ -98,7 +98,7 @@
                 android:layout_height="60dp"
                 android:layout_marginStart="20dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/img_angry"
+                android:src="@drawable/ing_cover"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="60:60"
                 app:layout_constraintStart_toStartOf="parent"
