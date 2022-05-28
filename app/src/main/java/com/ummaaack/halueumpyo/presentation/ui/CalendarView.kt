@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.ummaaack.halueumpyo.R
 import android.widget.GridView
 import android.widget.LinearLayout
+import android.widget.SeekBar
 import androidx.lifecycle.MutableLiveData
 import org.cardna.presentation.ui.alarm.adapter.DiaryResponseData
 import java.util.*
@@ -63,5 +64,9 @@ class CalendarView : LinearLayout {
         val eventDays: HashSet<Date> = HashSet()
         eventDays.add(Date())
         updateCalendar(eventDays, calendar)
+    }
+
+    fun addSeekbarChangeListener(seekbarChangeListener  : SeekBar.OnSeekBarChangeListener?){
+        binding.bdsSlider.setOnSeekBarChangeListener(seekbarChangeListener )
     }
 }

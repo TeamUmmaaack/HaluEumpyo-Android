@@ -22,6 +22,8 @@ android {
         versionCode = App.versionCode
         versionName = App.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", getApiKey("base_url"))
     }
 
     buildTypes {
@@ -86,6 +88,8 @@ dependencies {
     implementation(Dep.Moshi.kotlin)
 
     implementation(Dep.timber)
+    implementation(Dep.Moshi.core)
+    implementation(Dep.Moshi.kotlin)
 
     testImplementation(Dep.Test.junit)
     androidTestImplementation(Dep.AndroidTest.core)

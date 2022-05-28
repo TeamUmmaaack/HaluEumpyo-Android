@@ -1,6 +1,7 @@
 package com.depromeet.baton.di
 
 import com.squareup.moshi.Moshi
+import com.ummaaack.halueumpyo.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,30 +17,27 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
 
-    @Provides
-    @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
-        val logging = HttpLoggingInterceptor().apply {
-            this.setLevel(HttpLoggingInterceptor.Level.BODY)
-        }
+    private val BASE_URL = BuildConfig.BASE_URL
 
-        return OkHttpClient.Builder()
-            .addInterceptor(logging)
-            .connectTimeout(10, TimeUnit.MILLISECONDS)
-            .readTimeout(10, TimeUnit.MILLISECONDS)
-            .writeTimeout(10, TimeUnit.MILLISECONDS)
-            .build()
+    private fun httpLoggingInterceptor(): HttpLoggingInterceptor {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        return loggingInterceptor
     }
 
+    private fun getOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
+        .connectTimeout(20, TimeUnit.SECONDS)
+        .writeTimeout(20, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
+        .addInterceptor(httpLoggingInterceptor())
+        .build()
+
     @Provides
     @Singleton
-    fun provideRetrofit(
-        okHttpClient: OkHttpClient,
-        moshi: Moshi,
+    fun provideRetrofitObjectMoshi(
+        moshi: Moshi
     ): Retrofit {
-        return Retrofit.Builder()
-            .client(okHttpClient)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build()
+        return Retrofit.Builder().baseUrl(BASE_URL).client(getOkHttpClient())
+            .addConverterFactory(MoshiConverterFactory.create(moshi)).build()
     }
 }
