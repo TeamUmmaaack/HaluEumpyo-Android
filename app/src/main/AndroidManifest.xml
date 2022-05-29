@@ -12,27 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HaluEumpyo">
+
         <activity
             android:name=".presentation.ui.detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.recommendation.RecommendationActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".presentation.ui.seeall.SeeAllActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".presentation.ui.setting.SettingActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.write.WriteActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".HaluEumpyoApp"
             android:exported="false" />

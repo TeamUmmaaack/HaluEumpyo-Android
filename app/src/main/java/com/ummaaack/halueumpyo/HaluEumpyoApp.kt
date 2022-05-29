@@ -1,8 +1,7 @@
 package com.ummaaack.halueumpyo
 
 import android.app.Application
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.ummaaack.halueumpyo.data.HaluEumpyoRepository
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -11,7 +10,7 @@ class HaluEumpyoApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        HaluEumpyoRepository.init(this)
         initLogger()
     }
 
