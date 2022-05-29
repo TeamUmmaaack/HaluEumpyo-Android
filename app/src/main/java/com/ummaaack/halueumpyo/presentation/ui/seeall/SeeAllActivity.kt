@@ -8,19 +8,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.NumberPicker
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ummaaack.halueumpyo.R
 import com.ummaaack.halueumpyo.databinding.ActivitySeeAllBinding
 import com.ummaaack.halueumpyo.presentation.base.BaseViewUtil
 import com.ummaaack.halueumpyo.presentation.ui.MainActivity
+import com.ummaaack.halueumpyo.presentation.ui.MainViewModel
 import com.ummaaack.halueumpyo.presentation.ui.detail.DetailActivity
 import com.ummaaack.halueumpyo.presentation.util.StatusBarUtil
+import dagger.hilt.android.AndroidEntryPoint
 import org.cardna.presentation.ui.alarm.adapter.DiaryAdapter
 import org.cardna.presentation.ui.alarm.adapter.DiaryResponseData
 import java.util.*
 
-class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>(R.layout.activity_see_all) {
 
+@AndroidEntryPoint
+class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>(R.layout.activity_see_all) {
+    private val mainViewModel: MainViewModel by viewModels()
     private lateinit var diaryAdapter: DiaryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,41 +35,31 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
 
     override fun initView() {
         StatusBarUtil.setStatusBar(this, resources.getColor(R.color.white, null))
-        setFriendRequestAdapter()
+        setDiaryListAdapter()
         setDatePickerClickListener()
+        mainViewModel.getCalendar("2022-05-28")
     }
 
 
-    private fun setFriendRequestAdapter() {
-        val dataList = mutableListOf(
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-            DiaryResponseData("4", "WED", "오늘 이렇고 저런일이 있었다 오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다오늘 이렇고 저런일이 있었다\"", "한숨", "이하이"),
-        )
+    private fun setDiaryListAdapter() {
 
-        diaryAdapter = DiaryAdapter {
+        diaryAdapter = DiaryAdapter { diary ->
             startActivity(Intent(this, DetailActivity::class.java).apply {
-                putExtra("diary", it)
+                putExtra("diary", diary)
             })
         }
         with(binding.rvSeeAll) {
             adapter = diaryAdapter
             layoutManager = LinearLayoutManager(this@SeeAllActivity)
-
-            diaryAdapter.submitList(dataList)
+        }
+        mainViewModel.diaryList.observe(this) { diaryList ->
+            diaryAdapter.submitList(diaryList)
         }
     }
 
 
     private fun setDatePickerClickListener() {
-
+        binding.tvSeeAllDate.text = "2022년 5월"
 
         //  날짜 dialog
         binding.ivSeeAllDatePicker.setOnClickListener {
@@ -72,6 +67,7 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
             val dialog = AlertDialog.Builder(this).create()
             val edialog = LayoutInflater.from(this)
             val mView = edialog.inflate(R.layout.dialog_date_picker, null)
+
 
             val year: NumberPicker = mView.findViewById(R.id.yearpicker_datepicker)
             val month: NumberPicker = mView.findViewById(R.id.monthpicker_datepicker)
@@ -88,14 +84,17 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
             month.descendantFocusability = NumberPicker.FOCUS_BLOCK_DESCENDANTS
 
             //  최소값 설정
-            year.minValue = 2019
+            year.minValue = 2021
             month.minValue = 1
 
             //  최대값 설정
-            year.maxValue = 2021
+            year.maxValue = 2022
             month.maxValue = 12
-            year.displayedValues = arrayOf("2019년", "2020년", "2021년")
+
+
+            year.displayedValues = arrayOf("2021년", "2022년")
             month.displayedValues = arrayOf("1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월")
+
 
             //  취소 버튼 클릭 시
             cancel.setOnClickListener {
@@ -106,7 +105,11 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
             //  완료 버튼 클릭 시
             save.setOnClickListener {
                 binding.tvSeeAllDate.text = (year.value).toString() + "년" + " " + (month.value).toString() + "월"
-
+                var month = (month.value.toString()).let {
+                    if (it.length == 1) "0" + it
+                    else it
+                }
+                mainViewModel.getCalendar("${(year.value).toString()}-" + "${month}" + "-1")
                 dialog.dismiss()
                 dialog.cancel()
             }

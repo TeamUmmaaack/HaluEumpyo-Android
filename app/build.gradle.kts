@@ -86,6 +86,16 @@ dependencies {
     implementation(Dep.Retrofit.converterMoshi)
     implementation(Dep.Moshi.core)
     implementation(Dep.Moshi.kotlin)
+    // Gson
+    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
+    implementation("androidx.security:security-crypto:1.1.0-alpha03")
+    kapt("com.github.bumptech.glide:compiler:4.12.0")
+
 
     implementation(Dep.timber)
     implementation(Dep.Moshi.core)

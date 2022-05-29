@@ -1,5 +1,6 @@
 package com.ummaaack.halueumpyo.presentation.di
 
+import android.util.Log
 import com.ummaaack.halueumpyo.data.remote.datasource.CalendarDataSource
 import com.ummaaack.halueumpyo.data.remote.datasource.DiaryDataSource
 import com.ummaaack.halueumpyo.data.repository.CalendarRepositoryImpl

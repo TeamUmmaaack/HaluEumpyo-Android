@@ -1,23 +1,35 @@
 package com.ummaaack.halueumpyo.data.remote.model
 
+
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
 data class ResponseGetDiary(
+    @SerializedName("status")
     val status: Int,
+    @SerializedName("success")
     val success: Boolean,
+    @SerializedName("message")
     val message: String,
-    val data: Data,
+    @SerializedName("data")
+    val `data`: List<Data>
 ) {
     data class Data(
-        val data: List<Diary>,
-    )
+        @SerializedName("id")
+        var id: Int,
+        @SerializedName("content")
+        var content: String,
+        @SerializedName("emotionId")
+        var emotionId: Int,
+        @SerializedName("title")
+        var title: String,
+        @SerializedName("singer")
+        var singer: String,
+        @SerializedName("cover")
+        var cover: String,
+        @SerializedName("url")
+        var url: String,
+        @SerializedName("createdAt")
+        var createdAt: String
+    ) : Serializable
 }
-
-data class Diary(
-    val id:Int,
-    val content:String,
-    val emotionId:Int,
-    val title:String,
-    val singer:String,
-    val cover:String,
-    val url:String,
-    val createdAt:String
-)

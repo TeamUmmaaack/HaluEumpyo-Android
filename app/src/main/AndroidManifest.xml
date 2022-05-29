@@ -12,9 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HaluEumpyo">
-        <activity
-            android:name=".presentation.ui.MainActivity2"
-            android:exported="false" />
+
         <activity
             android:name=".presentation.ui.detail.DetailActivity"
             android:exported="false" />
