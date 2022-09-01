@@ -11,6 +11,7 @@ import android.widget.NumberPicker
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ummaaack.halueumpyo.R
+import com.ummaaack.halueumpyo.data.remote.model.ResponseGetDiary
 import com.ummaaack.halueumpyo.databinding.ActivitySeeAllBinding
 import com.ummaaack.halueumpyo.presentation.base.BaseViewUtil
 import com.ummaaack.halueumpyo.presentation.ui.MainActivity
@@ -109,7 +110,51 @@ class SeeAllActivity : BaseViewUtil.BaseAppCompatActivity<ActivitySeeAllBinding>
                     if (it.length == 1) "0" + it
                     else it
                 }
-                mainViewModel.getCalendar("${(year.value).toString()}-" + "${month}" + "-1")
+
+                diaryAdapter.submitList(
+                    listOf(
+                        ResponseGetDiary.Data(
+                            id = 1,
+                            content = "하데스타운...진짜 좋았다 또 보러 가야지",
+                            emotionId=3,
+                            title="1, 2, 3",
+                            singer="AB6IX (에이비식스)",
+                            cover="https://cdnimg.melon.co.kr/cm/album/images/100/96/855/10096855_500.jpg?143adaa26f0aeb5c274cb302ddac684f/melon/resize/500/quality/80/optimize",
+                            url="https://www.youtube.com/watch?v=eGXJs7zOHC4",
+                            createdAt="2022-05-28 Wed"
+                        ),
+                        ResponseGetDiary.Data(
+                            id = 2,
+                            content = "오늘은 그저 그런 날이었다 뭔가 특별한 것도 없고?",
+                            emotionId=2,
+                            title="그냥 (Just)",
+                            singer="Zion.T, Crush",
+                            cover="https://cdnimg.melon.co.kr/cm/album/images/102/84/718/10284718_500.jpg?1dcdc464e3ad11c2fcdfa73cf33ae4c7/melon/resize/500/quality/80/optimize",
+                            url="https://www.youtube.com/watch?v=c-EynNRWwmg",
+                            createdAt="2022-05-15 Fri"
+                        ),
+                        ResponseGetDiary.Data(
+                            id = 3,
+                            content = "오늘 날씨가 너무 좋아서 기분이 좋다~",
+                            emotionId=3,
+                            title="그래 그래",
+                            singer="김나영",
+                            cover="https://cdnimg.melon.co.kr/cm2/album/images/103/62/776/10362776_20191210144641_500.jpg?72384ea6f2169ad829dd9450d2382fe3/melon/resize/500/quality/80/optimize",
+                            url="https://www.youtube.com/watch?v=d4eiB-nmIoo",
+                            createdAt="2022-05-20 Sat"
+                        ),
+                        ResponseGetDiary.Data(
+                            id = 4,
+                            content = "와... 우리집 강아지가 가장 좋아하는 사람이 내가 아니라 엄만걸로 밝혀졌다 배신감들어...",
+                            emotionId=5,
+                            title="고백",
+                            singer="양다일",
+                            cover="https://cdnimg.melon.co.kr/cm/album/images/026/63/424/2663424_500.jpg/melon/resize/500/quality/80/optimize",
+                            url="https://www.youtube.com/watch?v=TcytstV1_XE",
+                            createdAt="2022-05-17 Sun"
+                        )))
+
+           //     mainViewModel.getCalendar("${(year.value).toString()}-" + "${month}" + "-1")
                 dialog.dismiss()
                 dialog.cancel()
             }

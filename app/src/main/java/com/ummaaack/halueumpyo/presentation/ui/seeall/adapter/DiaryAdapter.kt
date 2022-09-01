@@ -44,6 +44,8 @@ class DiaryAdapter(
                 tvItemSeeAllContent.text = data.content
                 tvItemSeeAllMonth.text = data.createdAt.substring(8..9)
                 tvItemSeeAllDay.text = data.createdAt.substring(11..13)
+                tvItemSeeAllMonth.text = data.createdAt.substring(8..9)
+                tvItemSeeAllDay.text = data.createdAt.substring(11..13)
                 tvItemSeeAllMusicSinger.text = data.singer
                 tvSeeAllMusicName.text = " - " + data.title
 

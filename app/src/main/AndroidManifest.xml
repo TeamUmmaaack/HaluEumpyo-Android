@@ -7,38 +7,42 @@
     <application
         android:name=".HaluEumpyoApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/logo"
+        android:label="하루음표"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HaluEumpyo">
+        <activity
+            android:name=".presentation.ui.SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".presentation.ui.detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.recommendation.RecommendationActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".presentation.ui.seeall.SeeAllActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".presentation.ui.setting.SettingActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.write.WriteActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HaluEumpyoApp"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

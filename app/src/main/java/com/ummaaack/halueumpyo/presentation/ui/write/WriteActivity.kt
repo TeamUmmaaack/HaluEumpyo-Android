@@ -50,17 +50,23 @@ class WriteActivity : BaseViewUtil.BaseAppCompatActivity<ActivityWriteBinding>(R
         binding.ctvWriteSend.setOnClickListener {
             writeViewModel.postDiary(binding.etWriteContent.toString())
             val dialog = this.showCustomDialog(R.layout.dialog_recommendation)
-            Handler(Looper.getMainLooper()).postDelayed({ dialog.dismiss() }, 4000)
-            Handler(Looper.getMainLooper()).postDelayed({ gotoRecommendation() }, 4001)
+            Handler(Looper.getMainLooper()).postDelayed({ dialog.dismiss() }, 2500)
+            Handler(Looper.getMainLooper()).postDelayed({ gotoRecommendation() }, 2501)
+
         }
     }
 
+
     private fun gotoRecommendation() {
-        writeViewModel.isPostDiarySuccess.observe(this) {
-            if (it) {
-                startActivity(Intent(this, RecommendationActivity::class.java))
-                finish()
-            }
-        }
+      //  writeViewModel.isPostDiarySuccess.observe(this) {
+            startActivity(
+                Intent(this, RecommendationActivity::class.java)
+                    .putExtra("title", writeViewModel.response.value?.data?.title)
+                    .putExtra("singer", writeViewModel.response.value?.data?.singer)
+                    .putExtra("cover", writeViewModel.response.value?.data?.cover)
+                    .putExtra("url", writeViewModel.response.value?.data?.url)
+                    .putExtra("emotionId", writeViewModel.response.value?.data?.emotionId)
+            )
+    //    }
     }
 }
