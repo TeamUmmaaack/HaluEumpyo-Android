@@ -18,7 +18,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 class DetailActivity : BaseViewUtil.BaseAppCompatActivity<ActivityDetailBinding>(R.layout.activity_detail) {
-    private val musicUrl = "https://www.youtube.com/watch?v=RgKAFK5djSk"
+    private val musicUrl = "https://www.youtube.com/watch?v=eGXJs7zOHC4"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +55,7 @@ class DetailActivity : BaseViewUtil.BaseAppCompatActivity<ActivityDetailBinding>
 
         //"2022-05-02 Mon 23:01"
         val diary = intent?.getSerializableExtra("diary") as ResponseGetDiary.Data
-        binding.tvDetailDay.text = diary.createdAt.substring(11..13) //요일
+     // binding.tvDetailDay.text = diary.createdAt.substring(11..13) //요일
         binding.tvDetailDate.text = diary.createdAt.substring(0..9)
         binding.tvDetailContent.text = diary.content //내용
         binding.tvDetailMusicName.text = diary.title //노래제목

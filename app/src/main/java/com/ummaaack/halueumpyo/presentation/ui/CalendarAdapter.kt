@@ -90,6 +90,13 @@ class CalendarAdapter(
             }
         }
 
+        if(day==7){
+            (myView as AppCompatButton).setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eight_note_soso_resize, 0);
+        }
+        if(day==2){
+     (myView as AppCompatButton).setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eight_note_surprise_resize, 0);
+        }
+
         (myView as View).setOnClickListener {
             var detailIndex = "0"
             diaryList.forEachIndexed { index, it ->

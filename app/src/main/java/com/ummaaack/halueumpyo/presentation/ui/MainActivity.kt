@@ -47,22 +47,22 @@ class MainActivity : BaseViewUtil.BaseAppCompatActivity<ActivityMainBinding>(R.l
 
     private fun setObserve() {
         mainViewModel.diaryList.observe(this) {
-       binding.cdvMain.updateCalendar(diaryList = it)
+            binding.cdvMain.updateCalendar(diaryList = it)
         }
     }
 
     override fun initView() {
-        mainViewModel.getCalendar("2022-05-28")
-
+         mainViewModel.getCalendar("2022-05-4")
+       // mainViewModel.postSingUp()
         StatusBarUtil.setStatusBar(this, resources.getColor(R.color.white, null))
         setInitClickListener()
 
-        intent.getStringExtra(RecommendationActivity.RECOMMENDATION_KEY)?.let {
+    /*    intent.getStringExtra(RecommendationActivity.RECOMMENDATION_KEY)?.let {
             if (!HaluEumpyoRepository.serviceRating) {
                 binding.ctlServiceContainer.visibility = View.VISIBLE
                 setRating()
             }
-        }
+        }*/
     }
 
     private fun setRating() {
