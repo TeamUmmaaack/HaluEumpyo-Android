@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/pretendard_semibold"
-                    android:text="2022년 5월 29일"
+                    android:text="2022년 9월 20일"
                     android:textColor="@color/gray06"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"

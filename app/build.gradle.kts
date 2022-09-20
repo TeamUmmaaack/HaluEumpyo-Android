@@ -8,7 +8,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("kotlin-parcelize")
-    id("dagger.hilt.android.plugin")
+id("dagger.hilt.android.plugin")
 }
 
 
@@ -23,7 +23,7 @@ android {
         versionName = App.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "BASE_URL", getApiKey("base_url"))
+        //buildConfigField("String", "BASE_URL", getApiKey("base_url"))
     }
 
     buildTypes {

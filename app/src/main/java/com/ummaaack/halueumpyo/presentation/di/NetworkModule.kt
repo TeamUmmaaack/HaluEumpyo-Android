@@ -22,7 +22,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-private val BASE_URL = BuildConfig.BASE_URL
+private val BASE_URL = "https://asia-northeast3-haluempyo.cloudfunctions.net/api/"
 
 
     private val gson = GsonBuilder().setLenient().create()

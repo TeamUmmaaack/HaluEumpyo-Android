@@ -33,16 +33,7 @@ class MainViewModel @Inject constructor(
             }.onSuccess {
                 _diaryList.value =
                     listOf(
-                      ResponseGetDiary.Data(
-                            id = 1,
-                            content = "오늘 치킨먹어야지 뿌링클먹을까 허니콤보먹을까 골라줄사람~ 생각만 해도 웃음이나는데",
-                            emotionId=1,
-                            title="비밀의 화원",
-                            singer="아이유",
-                            cover="https://cdnimg.melon.co.kr/cm/album/images/100/96/855/10096855_500.jpg?143adaa26f0aeb5c274cb302ddac684f/melon/resize/500/quality/80/optimize",
-                            url="https://www.youtube.com/watch?v=eGXJs7zOHC4",
-                            createdAt="2022-05-28 Wed"
-                        ),
+
                         ResponseGetDiary.Data(
                             id = 2,
                             content = "아침에 잠을 깨고 엄마한테 사랑한다고 말했다 나를 따라온 옆집 강아지 happy가 너무 귀여워서 행복했다. 세상에는 이렇게 행복하고 멋진 일도 많은 데 왜 어른들은 그런 걸 못 볼까? 어른 되면 후회도 많을 텐데 나는 그동안 열심히 내 자신을 찾아가야겠다 화이팅",
